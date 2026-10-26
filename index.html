@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Coffee House – Your perfect coffee paradise in Berndorf. Enjoy hot & cold beverages, desserts, and special combos in a cozy atmosphere.">
+    <title>Coffee House – Your Perfect Coffee Paradise</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-content">
+            <span class="preloader-icon">☕</span>
+            <p>Brewing something great...</p>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div id="cart-overlay" class="cart-overlay"></div>
+
+    <!-- Cart Drawer -->
+    <div id="cart-drawer" class="cart-drawer">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Your Cart</h3>
+            <button id="cart-close" class="cart-close"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <div class="cart-empty" id="cart-empty">
+                <i class="fas fa-coffee"></i>
+                <p>Your cart is empty!</p>
+                <a href="#order" class="button order-now" id="cart-shop-link">Order Now</a>
+            </div>
+        </div>
+        <div class="cart-footer" id="cart-footer" style="display:none">
+            <div class="cart-total">
+                <span>Total:</span>
+                <strong id="cart-total">$0.00</strong>
+            </div>
+            <button class="button submit-button cart-checkout-btn" id="cart-checkout">Checkout</button>
+            <div class="cart-order-success" id="cart-order-success" style="display:none">
+                <i class="fas fa-check-circle"></i> Order placed! We'll prepare it shortly.
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header id="header">
+        <nav class="navbar section-container">
+            <a href="#home" class="nav-logo">
+                <h2 class="logo-text">☕ Coffee</h2>
+            </a>
+            <ul class="nav-menu">
+                <button id="menu-close-button" class="fas fa-times"></button>
+                <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#menu" class="nav-link">Menu</a></li>
+                <li class="nav-item"><a href="#order" class="nav-link">Order</a></li>
+                <li class="nav-item"><a href="#booking" class="nav-link">Book Table</a></li>
+                <li class="nav-item"><a href="#stats" class="nav-link">Stats</a></li>
+                <li class="nav-item"><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="navbar-right">
+                <button id="cart-btn" class="cart-btn" title="View Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge" id="cart-badge">0</span>
+                </button>
+                <button id="menu-open-button" class="fas fa-bars"></button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section" id="home">
+            <div class="section-container section-content">
+                <div class="hero-details">
+                    <h2 class="title">Best Coffee</h2>
+                    <h3 class="subtitle">Make your day great with our special coffee!</h3>
+                    <p class="description">Welcome to our coffee paradise, where every bean tells a story and every cup sparks joy.</p>
+                    <div class="buttons">
+                        <a href="#menu" class="button order-now">Order Now</a>
+                        <a href="#contact" class="button contact-us">Contact Us</a>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper">
+                    <img src="images/coffee-hero-section.png" alt="Coffee" class="hero-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section" id="about">
+            <div class="section-container section-content">
+                <div class="about-image-wrapper reveal">
+                    <img src="images/about-image.jpg" alt="About Us" class="about-image">
+                </div>
+                <div class="about-details reveal">
+                    <h2 class="section-title">ABOUT US</h2>
+                    <p class="text">At Coffee House in Berndorf, Germany, we pride ourselves on being a go-to destination for coffee lovers and conversation seekers alike. We're dedicated to providing an exceptional coffee experience in a cozy and inviting atmosphere, where guests can relax, unwind, and enjoy their time in comfort.</p>
+                    <div class="social-link-list">
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Section -->
+        <section class="menu-section" id="menu">
+            <h2 class="section-title">OUR MENU</h2>
+            <div class="section-container section-content">
+                <ul class="menu-list">
+                    <li class="menu-item reveal">
+                        <div class="menu-image-wrapper">
+                            <img src="images/hot-beverages.png" alt="Hot Beverages" class="menu-image">
+                        </div>
+                        <div class="menu-details">
+                            <h3 class="name">Hot Beverages</h3>
+                            <p class="text">Wide range of steaming hot coffee to make you fresh and light.</p>
+                        </div>
+                    </li>
+                    <li class="menu-item reveal">
+                        <div class="menu-image-wrapper">
+                            <img src="images/cold-beverages.png" alt="Cold Beverages" class="menu-image">
+                        </div>
+                        <div class="menu-details">
+                            <h3 class="name">Cold Beverages</h3>
+                            <p class="text">Creamy and frothy cold coffee to make you cool.</p>
+                        </div>
+                    </li>
+                    <li class="menu-item reveal">
+                        <div class="menu-image-wrapper">
+                            <img src="images/refreshment.png" alt="Refreshment" class="menu-image">
+                        </div>
+                        <div class="menu-details">
+                            <h3 class="name">Refreshment</h3>
+                            <p class="text">Fruit and icy refreshing drinks to make you feel refresh.</p>
+                        </div>
+                    </li>
+                    <li class="menu-item reveal">
+                        <div class="menu-image-wrapper">
+                            <img src="images/special-combo.png" alt="Special Combos" class="menu-image">
+                        </div>
+                        <div class="menu-details">
+                            <h3 class="name">Special Combos</h3>
+                            <p class="text">Your favorite eating and drinking combinations.</p>
+                        </div>
+                    </li>
+                    <li class="menu-item reveal">
+                        <div class="menu-image-wrapper">
+                            <img src="images/desserts.png" alt="Dessert" class="menu-image">
+                        </div>
+                        <div class="menu-details">
+                            <h3 class="name">Dessert</h3>
+                            <p class="text">Satiate your palate and take you on a culinary treat.</p>
+                        </div>
+                    </li>
+                    <li class="menu-item reveal">
+                        <div class="menu-image-wrapper">
+                            <img src="images/burger-frenchfries.png" alt="Burger & French Fries" class="menu-image">
+                        </div>
+                        <div class="menu-details">
+                            <h3 class="name">Burger &amp; French Fries</h3>
+                            <p class="text">Quick bites to satisfy your small size hunger.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Order Online Section -->
+        <section class="order-section" id="order">
+            <h2 class="section-title">ORDER ONLINE</h2>
+            <div class="section-container">
+                <p class="order-subtitle">Pick your favourites and add them to your cart!</p>
+                <div class="products-grid">
+
+                    <div class="product-card reveal">
+                        <div class="product-img-wrap">
+                            <img src="images/hot-beverages.png" alt="Espresso" class="product-img">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Espresso</h3>
+                            <p class="product-desc">Rich, bold shot of pure coffee goodness.</p>
+                            <div class="product-bottom">
+                                <span class="product-price">$3.99</span>
+                                <button class="add-to-cart-btn" data-name="Espresso" data-price="3.99">
+                                    <i class="fas fa-plus"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card reveal">
+                        <div class="product-img-wrap">
+                            <img src="images/hot-beverages.png" alt="Cappuccino" class="product-img">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Cappuccino</h3>
+                            <p class="product-desc">Creamy steamed milk with espresso shot.</p>
+                            <div class="product-bottom">
+                                <span class="product-price">$4.49</span>
+                                <button class="add-to-cart-btn" data-name="Cappuccino" data-price="4.49">
+                                    <i class="fas fa-plus"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card reveal">
+                        <div class="product-img-wrap">
+                            <img src="images/cold-beverages.png" alt="Cold Brew" class="product-img">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Cold Brew</h3>
+                            <p class="product-desc">Smooth, slow-steeped cold coffee blend.</p>
+                            <div class="product-bottom">
+                                <span class="product-price">$4.99</span>
+                                <button class="add-to-cart-btn" data-name="Cold Brew" data-price="4.99">
+                                    <i class="fas fa-plus"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card reveal">
+                        <div class="product-img-wrap">
+                            <img src="images/cold-beverages.png" alt="Iced Mocha" class="product-img">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Iced Mocha</h3>
+                            <p class="product-desc">Chocolate-kissed iced coffee delight.</p>
+                            <div class="product-bottom">
+                                <span class="product-price">$5.49</span>
+                                <button class="add-to-cart-btn" data-name="Iced Mocha" data-price="5.49">
+                                    <i class="fas fa-plus"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card reveal">
+                        <div class="product-img-wrap">
+                            <img src="images/refreshment.png" alt="Fruit Refresher" class="product-img">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Fruit Refresher</h3>
+                            <p class="product-desc">Icy fruity burst to cool you down.</p>
+                            <div class="product-bottom">
+                                <span class="product-price">$4.29</span>
+                                <button class="add-to-cart-btn" data-name="Fruit Refresher" data-price="4.29">
+                                    <i class="fas fa-plus"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card reveal">
+                        <div class="product-img-wrap">
+                            <img src="images/desserts.png" alt="Dessert Platter" class="product-img">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Dessert Platter</h3>
+                            <p class="product-desc">Sweet treats to end your meal perfectly.</p>
+                            <div class="product-bottom">
+                                <span class="product-price">$6.99</span>
+                                <button class="add-to-cart-btn" data-name="Dessert Platter" data-price="6.99">
+                                    <i class="fas fa-plus"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card reveal">
+                        <div class="product-img-wrap">
+                            <img src="images/burger-frenchfries.png" alt="Burger Combo" class="product-img">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Burger Combo</h3>
+                            <p class="product-desc">Juicy burger with crispy french fries.</p>
+                            <div class="product-bottom">
+                                <span class="product-price">$8.99</span>
+                                <button class="add-to-cart-btn" data-name="Burger Combo" data-price="8.99">
+                                    <i class="fas fa-plus"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card reveal">
+                        <div class="product-img-wrap">
+                            <img src="images/special-combo.png" alt="Special Combo" class="product-img">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Special Combo</h3>
+                            <p class="product-desc">Our chef's favourite all-in-one combo.</p>
+                            <div class="product-bottom">
+                                <span class="product-price">$9.99</span>
+                                <button class="add-to-cart-btn" data-name="Special Combo" data-price="9.99">
+                                    <i class="fas fa-plus"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Table Booking Section -->
+        <section class="booking-section" id="booking">
+            <h2 class="section-title">BOOK A TABLE</h2>
+            <div class="section-container">
+                <p class="booking-subtitle">Reserve your spot and we'll have it ready for you!</p>
+                <form id="booking-form" class="booking-form reveal" novalidate>
+
+                    <!-- Card Banner -->
+                    <div class="booking-form-banner">
+                        <div class="banner-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div>
+                            <h3>Make a Reservation</h3>
+                            <p>Fill in your details below and we'll confirm your table.</p>
+                        </div>
+                    </div>
+
+                    <!-- Form Body -->
+                    <div class="booking-form-body">
+                        <div class="booking-grid">
+                            <div class="form-group">
+                                <label for="b-name"><i class="fas fa-user"></i> Full Name</label>
+                                <input type="text" id="b-name" placeholder="e.g. John Smith" class="form-input" required>
+                                <span class="form-error" id="b-name-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="b-email"><i class="fas fa-envelope"></i> Email</label>
+                                <input type="email" id="b-email" placeholder="e.g. john@email.com" class="form-input" required>
+                                <span class="form-error" id="b-email-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="b-phone"><i class="fas fa-phone"></i> Phone Number</label>
+                                <input type="tel" id="b-phone" placeholder="e.g. (123) 456-7890" class="form-input" required>
+                                <span class="form-error" id="b-phone-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="b-guests"><i class="fas fa-users"></i> Number of Guests</label>
+                                <select id="b-guests" class="form-input" required>
+                                    <option value="">Select guests</option>
+                                    <option value="1">1 Person</option>
+                                    <option value="2">2 People</option>
+                                    <option value="3">3 People</option>
+                                    <option value="4">4 People</option>
+                                    <option value="5">5 People</option>
+                                    <option value="6+">6+ People</option>
+                                </select>
+                                <span class="form-error" id="b-guests-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="b-date"><i class="fas fa-calendar-alt"></i> Date</label>
+                                <input type="date" id="b-date" class="form-input" required>
+                                <span class="form-error" id="b-date-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="b-time"><i class="fas fa-clock"></i> Time</label>
+                                <select id="b-time" class="form-input" required>
+                                    <option value="">Select time</option>
+                                    <option value="09:00">09:00 AM</option>
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="12:00">12:00 PM</option>
+                                    <option value="13:00">01:00 PM</option>
+                                    <option value="14:00">02:00 PM</option>
+                                    <option value="15:00">03:00 PM</option>
+                                    <option value="16:00">04:00 PM</option>
+                                </select>
+                                <span class="form-error" id="b-time-error"></span>
+                            </div>
+                            <div class="form-group booking-note">
+                                <label for="b-note"><i class="fas fa-comment-alt"></i> Special Requests <span style="font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
+                                <textarea id="b-note" placeholder="Any dietary requirements, allergies, or special occasions..." class="form-input" rows="3"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Footer: hint + button -->
+                        <div class="booking-form-footer">
+                            <p class="booking-note-text">
+                                <i class="fas fa-info-circle"></i>
+                                We'll send a confirmation to your email within 24 hours.
+                            </p>
+                            <button type="submit" class="booking-submit">
+                                <i class="fas fa-calendar-check"></i> Confirm Booking
+                            </button>
+                        </div>
+
+                        <div class="form-success" id="booking-success">
+                            <i class="fas fa-check-circle"></i> Booking confirmed! See you soon ☕
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section" id="stats">
+            <div class="section-container">
+                <h2 class="section-title">BY THE NUMBERS</h2>
+                <div class="stats-grid">
+                    <div class="stat-card reveal">
+                        <i class="fas fa-coffee stat-icon"></i>
+                        <h3 class="stat-number" data-target="15000">0</h3>
+                        <p class="stat-label">Cups Served</p>
+                    </div>
+                    <div class="stat-card reveal">
+                        <i class="fas fa-star stat-icon"></i>
+                        <h3 class="stat-number" data-target="4800">0</h3>
+                        <p class="stat-label">Happy Customers</p>
+                    </div>
+                    <div class="stat-card reveal">
+                        <i class="fas fa-award stat-icon"></i>
+                        <h3 class="stat-number" data-target="12">0</h3>
+                        <p class="stat-label">Awards Won</p>
+                    </div>
+                    <div class="stat-card reveal">
+                        <i class="fas fa-calendar-check stat-icon"></i>
+                        <h3 class="stat-number" data-target="8">0</h3>
+                        <p class="stat-label">Years in Business</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials-section" id="testimonials">
+            <h2 class="section-title">TESTIMONIALS</h2>
+            <div class="section-container">
+                <div class="testimonial-container swiper">
+                    <div class="slider-wrapper">
+                        <div class="swiper-slide-button swiper-button-prev">
+                            <i class="fas fa-chevron-left"></i>
+                        </div>
+                        <ul class="testimonial-list swiper-wrapper">
+                            <li class="testimonial swiper-slide">
+                                <img src="images/user-1.jpg" alt="Emily Harris" class="user-image">
+                                <div class="star-rating">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <h3 class="name">Emily Harris</h3>
+                                <i class="feedback">"Excellent quality! Fresh beans and quick delivery. Highly recommend."</i>
+                            </li>
+                            <li class="testimonial swiper-slide">
+                                <img src="images/user-2.jpg" alt="Anthony Thompson" class="user-image">
+                                <div class="star-rating">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <h3 class="name">Anthony Thompson</h3>
+                                <i class="feedback">"Best decaf I've tried! Smooth and flavorful. Arrived promptly."</i>
+                            </li>
+                            <li class="testimonial swiper-slide">
+                                <img src="images/user-3.jpg" alt="Sarah Johnson" class="user-image">
+                                <div class="star-rating">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <h3 class="name">Sarah Johnson</h3>
+                                <i class="feedback">"Loved the French roast. Perfectly balanced and rich. Will order again!"</i>
+                            </li>
+                            <li class="testimonial swiper-slide">
+                                <img src="images/user-4.jpg" alt="James Wilson" class="user-image">
+                                <div class="star-rating">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <h3 class="name">James Wilson</h3>
+                                <i class="feedback">"Great espresso blend! Smooth and bold flavor. Fast shipping too!"</i>
+                            </li>
+                            <li class="testimonial swiper-slide">
+                                <img src="images/user-5.jpg" alt="Michael Brown" class="user-image">
+                                <div class="star-rating">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <h3 class="name">Michael Brown</h3>
+                                <i class="feedback">"Fantastic mocha flavor. Fresh and aromatic. Quick shipping!"</i>
+                            </li>
+                        </ul>
+                        <div class="swiper-slide-button swiper-button-next">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="gallery-section" id="gallery">
+            <h2 class="section-title">GALLERY</h2>
+            <div class="section-container section-content">
+                <ul class="gallery-list">
+                    <li class="gallery-item reveal">
+                        <img src="images/gallery-1.jpg" alt="Gallery Image 1" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </li>
+                    <li class="gallery-item reveal">
+                        <img src="images/gallery-2.jpg" alt="Gallery Image 2" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </li>
+                    <li class="gallery-item reveal">
+                        <img src="images/gallery-3.jpg" alt="Gallery Image 3" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </li>
+                    <li class="gallery-item reveal">
+                        <img src="images/gallery-4.jpg" alt="Gallery Image 4" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </li>
+                    <li class="gallery-item reveal">
+                        <img src="images/gallery-5.jpg" alt="Gallery Image 5" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </li>
+                    <li class="gallery-item reveal">
+                        <img src="images/gallery-6.jpg" alt="Gallery Image 6" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Gallery Lightbox -->
+        <div id="lightbox" class="lightbox">
+            <button class="lightbox-close" id="lightbox-close"><i class="fas fa-times"></i></button>
+            <button class="lightbox-prev" id="lightbox-prev"><i class="fas fa-chevron-left"></i></button>
+            <img src="" alt="Lightbox Image" class="lightbox-img" id="lightbox-img">
+            <button class="lightbox-next" id="lightbox-next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <h2 class="section-title">CONTACT US</h2>
+            <div class="section-container section-content">
+                <ul class="contact-info-list reveal">
+                    <li class="contact-info">
+                        <i class="fa-solid fa-location-crosshairs"></i>
+                        <p>123 Campsite Avenue, Wilderness, CA 98765</p>
+                    </li>
+                    <li class="contact-info">
+                        <i class="fa-regular fa-envelope"></i>
+                        <p>coffeehouse@example.com</p>
+                    </li>
+                    <li class="contact-info">
+                        <i class="fa-solid fa-phone"></i>
+                        <p>(123) 456-7890</p>
+                    </li>
+                    <li class="contact-info">
+                        <i class="fa-regular fa-clock"></i>
+                        <p>Monday – Friday: 9:00 AM – 5:00 PM</p>
+                    </li>
+                    <li class="contact-info">
+                        <i class="fa-regular fa-clock"></i>
+                        <p>Saturday: 10:00 AM – 3:00 PM</p>
+                    </li>
+                    <li class="contact-info">
+                        <i class="fa-regular fa-clock"></i>
+                        <p>Sunday: Closed</p>
+                    </li>
+                    <li class="contact-info">
+                        <i class="fa-solid fa-globe"></i>
+                        <p>www.coffeehouse.com</p>
+                    </li>
+                </ul>
+                <form id="contact-form" class="contact-form reveal" novalidate>
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your name" class="form-input" required>
+                        <span class="form-error" id="name-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your email" class="form-input" required>
+                        <span class="form-error" id="email-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your message" class="form-input" rows="4" required></textarea>
+                        <span class="form-error" id="message-error"></span>
+                    </div>
+                    <button type="submit" class="button submit-button">
+                        <span class="btn-text">Send Message</span>
+                        <i class="fas fa-paper-plane btn-icon"></i>
+                    </button>
+                    <div class="form-success" id="form-success">
+                        <i class="fas fa-check-circle"></i> Thank you! We'll get back to you soon.
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer class="footer-section">
+            <div class="section-container footer-content">
+                <div class="footer-brand">
+                    <h2 class="footer-logo">☕ Coffee</h2>
+                    <p class="footer-tagline">Brewing happiness, one cup at a time.</p>
+                    <div class="footer-socials">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-hours">
+                    <h4>Opening Hours</h4>
+                    <ul>
+                        <li>Monday – Friday: 9 AM – 5 PM</li>
+                        <li>Saturday: 10 AM – 3 PM</li>
+                        <li>Sunday: Closed</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright-text">© 2024 Coffee House. All rights reserved.</p>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" title="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
